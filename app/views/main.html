@@ -1,0 +1,14 @@
+<div layout="row" flex>
+    <form ng-controller="connectCtrl" novalidate>
+        <div>Liste de courses collaborative</div>
+        <div>
+            <span>Choisir un pseudo : </span><md-input type="text" id="username">
+        </div>
+        <div>
+            <span>Rechercher une liste : </span><md-input type="text" id="roomName">
+        </div>
+        <div>
+            <md-button class="md-raised md-primary" ng-click="send()">Connexion</md-button>
+        </div>
+    </form>
+</div>
