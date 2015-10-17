@@ -1,12 +1,21 @@
+<div ng-include="'views/partials/header.html'"></div>
+
 <div layout="row" flex>
-    <form ng-controller="connectCtrl" novalidate>
-        <div>Liste de courses collaborative</div>
-        <div>
-            <span>Choisir un pseudo : </span><md-input type="text" id="username">
-        </div>
-        <div>
-            <span>Rechercher une liste : </span><md-input type="text" id="roomName">
-        </div>
+    <form name="connectForm" ng-controller="connectCtrl" novalidate>
+        <md-input-container>
+            <label>Pseudo</label>
+            <input type="text" ng-model="user.username" required name="username">
+            <div ng-show="connectForm.$submitted || connectForm.username.$touched" ng-messages="connectForm.username.$error">
+                <div ng-message="required">Vous devez choisir un pseudo</div>
+            </div>
+        </md-input-container>
+        <md-input-container>
+            <label>Liste</label>
+            <input type="text" ng-model="user.list" required name="list">
+            <div ng-show="connectForm.$submitted || connectForm.list.$touched" ng-messages="connectForm.list.$error">
+                <div ng-message="required">Vous devez choisir une liste</div>
+            </div>
+        </md-input-container>
         <div>
             <md-button class="md-raised md-primary" ng-click="send()">Connexion</md-button>
         </div>
