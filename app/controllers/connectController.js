@@ -10,6 +10,7 @@ connectController.controller('connectCtrl', ['$scope', '$location', 'cobraServic
            if ($scope.user.username.trim() != ""
                 && $scope.user.list.trim() != "") {
                var res = cobraService.connect($scope.user.username, $scope.user.list);
+               console.log(res);
                if (res) {$location.path('/list');}
            }
         };

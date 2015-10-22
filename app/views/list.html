@@ -1,7 +1,31 @@
 <div ng-include="'views/partials/header.html'"></div>
 
 <div layout="row" flex>
+    <div>
+        <a href="#/">Retour à l'accueil</a>
+    </div>
+</div>
+
+<div layout="row" flex>
     <p>
-        welcome on list
+        welcome on list {{listName}}
     </p>
+</div>
+<div layout="row" flex ng-repeat="message in list">
+    <div> {{message.content.user}} : {{message.content.message}}</div>
+</div>
+
+
+<div layout="row" flex>
+    <form name="connectForm" ng-controller="sendCtrl" novalidate>
+        <md-input-container>
+            <label>
+                Message
+            </label>
+            <input type="text" ng-model="message">
+        </md-input-container>
+        <div>
+            <md-button class="md-raised md-primary" ng-click="send()">Envoyer</md-button>
+        </div>
+    </form>
 </div>

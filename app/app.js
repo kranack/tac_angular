@@ -6,7 +6,8 @@ var app = angular.module('app', [
     'ngMaterial',
     'mainController',
     'connectController',
-    'listController'
+    'listController',
+    'sendController'
 ]);
 
 app.config(['$routeProvider', function($routeProvider) {
